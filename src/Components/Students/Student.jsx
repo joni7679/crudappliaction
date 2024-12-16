@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { MdDeleteOutline } from "react-icons/md";
 import { GrEdit } from "react-icons/gr";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { RxCross1 } from "react-icons/rx";
 import { Navigate } from 'react-router-dom';
 export default function Student() {
-    // let navigate = navigate()
+    const navigate = useNavigate();
+
     const [data, SetData] = useState([]);
     const [popup, SetPopup] = useState(false)
     const [FormData, SetFormData] = useState({
@@ -48,13 +49,13 @@ export default function Student() {
         }
     };
 
+    const handleEdit = (id) => {
+        navigate(`/edit/${id}`);
+    };
+
     useEffect(() => {
         fetchData();
     }, []);
-
-    const HandelEdit = () => {
-
-    }
 
     return (
         <>
@@ -143,7 +144,7 @@ export default function Student() {
                                 <td>{item.email || 'N/A'}</td>
                                 <td>{item.stuAge || 'N/A'}</td>
                                 <td>{item.address || 'N/A'}</td>
-                                <td onClick={() => alert(`You clicked on index: ${index}`)} className='cursor-pointer text-xl'><GrEdit /></td>
+                                <td  onClick={()=>handleEdit(item.id)} className='cursor-pointer text-xl'><GrEdit /></td>
                                 <td onClick={() => handleDelete(item.id)} className='cursor-pointer text-xl'><MdDeleteOutline /></td>
                             </tr>
                         ))}

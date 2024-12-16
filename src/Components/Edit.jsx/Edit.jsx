@@ -7,7 +7,7 @@ export default function Edit() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/Students/ecc7`).then((res) => {
+        axios.get(`http://localhost:3000/Students/${id}`).then((res) => {
             console.log(res.data);
             setStudent(res.data);
         }).catch((error) => {
@@ -27,7 +27,7 @@ export default function Edit() {
             address: student.address
         };
 
-        axios.put(`http://localhost:3000/Students/ecc7`, data).then((res) => {
+        axios.put(`http://localhost:3000/Students/${id}`, data).then((res) => {
             console.log(res.data);
             alert("Student Details Updated Successfully");
             setStudent(res.data);
