@@ -1,3 +1,25 @@
 {
-  "StudentsName": []
+  "Students": [
+    {
+      "id": "035e",
+      "name": "ankan Gosh",
+      "email": "ankan@gmail.com",
+      "stuAge": "32",
+      "adderss": "Gangarampur"
+    },
+    {
+      "id": "7971",
+      "name": "joy sen",
+      "email": "joyhalder@gmail.com",
+      "stuAge": "21",
+      "adderss": ""
+    },
+    {
+      "id": "09a4",
+      "name": "Anitosh Halder",
+      "email": "anivi@gmail.com",
+      "stuAge": "20",
+      "address": "Belbari"
+    }
+  ]
 }
