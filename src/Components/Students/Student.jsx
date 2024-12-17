@@ -5,9 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { RxCross1 } from "react-icons/rx";
 import { Navigate } from 'react-router-dom';
-export default function Student() {
-    const navigate = useNavigate();
+import { ToastContainer, toast } from 'react-toastify';
 
+export default function Student() {
+    let navigate = useNavigate()
     const [data, SetData] = useState([]);
     const [popup, SetPopup] = useState(false)
     const [FormData, SetFormData] = useState({
@@ -50,8 +51,10 @@ export default function Student() {
     };
 
     const handleEdit = (id) => {
+        console.log("callid", id);
+        window.localStorage.setItem("Id", id)
         navigate(`/edit/${id}`);
-    };
+    }
 
     useEffect(() => {
         fetchData();
@@ -144,7 +147,7 @@ export default function Student() {
                                 <td>{item.email || 'N/A'}</td>
                                 <td>{item.stuAge || 'N/A'}</td>
                                 <td>{item.address || 'N/A'}</td>
-                                <td  onClick={()=>handleEdit(item.id)} className='cursor-pointer text-xl'><GrEdit /></td>
+                                <td onClick={() => handleEdit(item.id)} className='cursor-pointer text-xl'><GrEdit /></td>
                                 <td onClick={() => handleDelete(item.id)} className='cursor-pointer text-xl'><MdDeleteOutline /></td>
                             </tr>
                         ))}

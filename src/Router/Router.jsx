@@ -9,7 +9,7 @@ export let router = createBrowserRouter(
             element: <App />
         },
         {
-            path: "/edit",
+            path: "/edit/:id",
             element: <Edit />
         },
 

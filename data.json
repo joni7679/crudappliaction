@@ -1,18 +1,11 @@
 {
   "Students": [
     {
-      "id": "a00c",
-      "name": "joni halder",
+      "name": "Joni Halder",
       "email": "jonihalder814@gmail.com",
-      "stuAge": "21",
-      "address": "Belbari"
-    },
-    {
-      "id": "8f83",
-      "name": "Joy Halder",
-      "email": "joysen@gmail.com",
-      "stuAge": "12",
-      "address": "Gangarampur"
+      "stuAge": "23",
+      "address": "Belbari",
+      "id": "a455"
     }
   ]
 }
